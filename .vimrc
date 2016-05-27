@@ -1,4 +1,3 @@
-
 set nocompatible              " required
 filetype off                  " required
 
@@ -14,18 +13,14 @@ Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
-Plugin 'vim-scripts/indentpython.vim'
 
-Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
-
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'alfredodeza/coveragepy.vim'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
-Plugin 'klen/python-mode'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " All of your Plugins must be added before the following line
@@ -40,4 +35,12 @@ let python_highlight_all=1
 syntax on
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 set clipboard=unnamed
-
+" only use jedi completion with ctrl-space, not after '.'
+" let g:jedi#goto_assignments_command = "<Leader>g"
+let g:jedi#goto_definitions_command = "<Leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<Leader>n"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<Leader>r"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
